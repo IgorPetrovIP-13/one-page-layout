@@ -1,0 +1,77 @@
+.slogan{
+  padding-bottom: 88px;
+
+  &__title{
+    padding-bottom: 27px;
+    font-size: 26px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #635C73;
+  }
+
+  &__text{
+    font-family: $paragraph-font;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+  }
+
+  &__git-hub{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 36px;
+  }
+}
+
+.git-hub-stats{
+
+  &__item{
+    border: 1px solid #d9dbdb;
+    border-radius: 4px;
+    margin: 10px 3px 10px 0px;
+  }
+
+  &__button{
+    padding: 3px 10px;
+    border: transparent;
+    border-right: 1px solid #d9dbdb;
+    height: 100%;
+
+    &:hover{
+      background-color: #1b1f2326;
+      transition: all .2s ease;
+    }
+
+    span{
+        font-weight: 700;
+        position: relative;
+        bottom: 1px;
+        color: #24292e;
+      }
+    }
+
+  &__svg{
+    position: relative;
+    fill: #7a828b;
+    top: 2px;
+  }
+
+  &__description{
+    display: inline-block;
+  }
+
+  &__social-count{
+    font-size: 14px;
+    font-weight: 700;
+    color: #24292e;
+    text-align: center;
+    padding: 5px 8px 5px;
+
+    &:hover{
+      color: #0366d6;
+    }
+  }
+}
+
+@import "media";

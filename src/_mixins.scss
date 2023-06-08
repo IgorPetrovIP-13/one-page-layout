@@ -1,0 +1,30 @@
+@mixin flex-column-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin text-white-center-uppercase{
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+@mixin flex-center-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin buttonStyle {
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  background-color: $purple-color;
+}

@@ -1,0 +1,539 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    padding: 0 16px;
+    height: 100%;
+}
+
+.header {
+    height: 103px;
+    background-color: rgba(39, 38, 42, 1);
+    position: relative;
+
+    &__container {
+        // @include flexBox;
+        height: 100%;
+    }
+
+    &__navbar {
+        // @include flexBox;
+        height: 100%;
+    }
+
+    &__burger {
+        display: flex;
+        align-items: center;
+        width: 26px;
+        height: 21px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__drop-menu {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: rgba(51, 51, 51, 1);
+        min-width: 290px;
+        box-shadow: 0 14px rgba(51, 51, 51, 1);
+        animation: burgerAnimation .4s;
+    }
+
+    &__drop-list li {
+        padding: 29px 0px 21px 35px;
+        border-bottom: 3px solid rgba(59, 59, 59, 1);
+    }
+
+    &__drop-list li a {
+        text-decoration: none;
+        color: $white-color;
+        font-size: 26px;
+        line-height: 26px;
+        position: relative;
+    }
+
+    &__drop-list li a:active, &__drop-list li a:focus {
+        color: $purple-color;
+    }
+
+    &__drop-list li a:active::before, &__drop-list li a:focus::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 53px;
+        background-color: $purple-color;
+        bottom: 50%;
+        transform: translate(0, 43%);
+        left: -33px;
+    }
+
+    &__logo-img {
+        width: 43px;
+        height: 41px;
+        background: url('../img/01_header_04_testimonials/img/fork-app-logo.png') center/cover no-repeat;
+        transition: .3s ease;
+    }
+}
+
+.header__burger span {
+    width: 100%;
+    height: 2px;
+    background-color: $white-color;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+// Анімація для бургера
+@keyframes burgerAnimation {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.header__burger::before, .header__burger::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $white-color;
+    border-radius: 5px;
+}
+
+.header__burger::after {
+    transition: all 0.3s ease;
+}
+
+.header__burger::before {
+    width: 15px;
+    top: -1px;
+    transform: scale(1);
+}
+
+.header__burger.active::before {
+    transform: scale(0);
+}
+
+.header__burger.active::after {
+    position: absolute;
+    bottom: 50%;
+    transform: rotate(-45deg) translate(0, 50%);
+    border-radius: 0;
+}
+
+.header__burger.active span {
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg) translate(0, -50%);
+    border-radius: 0;
+}
+
+.button {
+    @include buttonStyle;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button--buy {
+    padding: 11px 22px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    color: $white-color;
+    transition: .3s ease;
+}
+
+.app-introduction {
+    background: url("../img/01_header_04_testimonials/img/section-app-introduction-background.png") center/cover no-repeat;
+    height: 614px;
+    position: relative;
+
+    &__container {
+        @include flexBox;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        color: rgba(255, 255, 255, 1);
+        padding: 60px 0 19px 0;
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 24px;
+        color: $purple-color;
+        text-align: center;
+        padding: 0 0 14px 0;
+    }
+
+    &__description--other-style {
+        display: none;
+        font-family: 'Lato';
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 24px;
+        color: $purple-color;
+        padding: 0 0 19px 0;
+    }
+}
+
+// стилі для тексту //
+.main-text {
+    font-size: 14px;
+    line-height: 14px;
+    color: $grey-color;
+}
+
+.main-text--versions {
+    text-transform: uppercase;
+    padding: 0 0 14px 0;
+}
+
+.main-text--trial-period {
+    text-align: center;
+    padding: 35.5px 0 79.5px 0;
+}
+
+.button--download {
+    color: $white-color;
+    padding: 13px 29px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    min-width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: .3s ease;
+}
+
+.header__logo-link {
+    text-decoration: none;
+    @include flexBox;
+    gap: 17px;
+}
+
+.header__logo-text {
+    display: none;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 16px;
+    color: rgba(141, 129, 172, 1);
+    transition: .3s ease;
+}
+
+.header__logo-and-btn-container {
+    @include flexBox;
+    height: 100%;
+}
+
+// .header__menu {
+//     // по дефолту не показуються вкладки
+//     // display: none;
+// }
+
+.header__list li a{
+    text-decoration: none;
+    color: $purple-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    transition: .3s ease;
+}
+
+.button--for-big-monitors {
+    display: none;
+}
+
+@media (min-width: 481px) {
+    .wrapper {
+        padding: 0 20px;
+    }
+
+
+    .header {
+        height: 118px;
+
+        &__burger {
+            display: none;
+        }
+
+        &__navbar {
+            flex-direction: column;
+        }
+
+        &__list {
+            @include flexBox;
+            max-width: 449px;
+            margin: 0 auto;
+        }
+
+        &__logo-and-btn-container {
+            height: 73%;
+        }
+    }
+
+    .button--buy {
+        width: 145px;
+        height: 38px;
+        padding: 0;
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .app-introduction {
+        &__title {
+            font-size: 72px;
+            padding: 69px 0 25px 0;
+        }
+
+        &__description {
+            display: none;
+        }
+
+        &__description--other-style {
+            display: block;
+        }
+    }
+
+    .button--download {
+        width: 390px;
+        height: 62px;
+        font-size: 21px;
+    }
+
+    .main-text--trial-period {
+        padding: 45.5px 0 93.5px 0;
+    }
+
+    .header__logo-text {
+        display: block;
+    }
+}
+
+@media (min-width: 993px) {
+
+    .header {
+        height: 100px;
+        background-color: #010005;
+        border-bottom: 5px solid black;
+
+        &__navbar {
+            @include flexBox;
+            flex-direction: row;
+        }
+
+        &__logo-and-btn-container {
+            display: flex;
+        }
+
+        &__menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 48px;
+        }
+
+        &__list {
+            margin: 0 0;
+            gap: 48px;
+            max-width: none;
+        }
+    }
+
+    .button.button--buy {
+        display: none;
+    }
+
+    .button.button--buy.button--for-big-monitors {
+        display: block;
+        transition: .3s ease;
+    }
+
+    .app-introduction {
+        &__title {
+            font-size: 82px;
+            padding: 83px 0 27px 0;
+        }
+
+        &__description--other-style {
+            font-size: 30px;
+        }
+    }
+
+    .main-text.main-text--versions {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1201px) {
+   .wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+   }
+}
+
+.header__list li:hover a{
+    color: $white-color;
+}
+
+.button.button--buy.button--for-big-monitors:hover,
+.button.button--buy:hover,
+.button.button--download:hover {
+    background-color: $white-color;
+    color: $purple-color;
+    border: 1px solid $purple-color;
+    box-sizing: border-box;
+}
+
+.button.button--download:hover {
+    border: 2px solid $purple-color;
+}
+
+.header__logo-link:hover .header__logo-text {
+    color: $white-color;
+}
+
+.header__logo-link:hover .header__logo-img {
+    background: url('../img/01_header_04_testimonials/img/fork-app-logo-hover.png') center/cover no-repeat;
+}
+
+// ----- PEOPLE ARE TALKING ABOUT FORK SECTION ----- //
+.mentions-about-fork {
+    position: relative;    
+    background: url('../img/01_header_04_testimonials/img/people-are-talking-about-fork-background.png') center/cover no-repeat;
+
+    &__title {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        color: $white-color;
+        padding: 57px 0 53px 0;
+    }
+
+    // &__container {
+
+    // }
+
+    &__quote {
+        @include flexBox;
+        flex-direction: column;
+        gap: 33px;
+    }
+
+    &__text {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: $white-color;
+        padding: 0 0 45px 0;
+    }
+
+    &__text--other-padding {
+        padding: 0 0 37px 0;
+    }
+
+    &__footer {
+        font-family: 'Lato';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: rgba(162, 145, 165, 1);
+        padding: 0 0 22px 0;
+        box-sizing: border-box;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 2px;
+        width: 245px;
+        background-color: rgba(100, 87, 102, 1);
+    }
+}
+
+@media (min-width: 481px) {
+    .mentions-about-fork {
+        &__title {
+            padding: 86px 0 88px 0;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            column-gap: 30px;
+            row-gap: 58px;
+        }
+
+        &__text {
+            padding: 0;
+            max-width: 345px;
+        }
+
+
+        &__quote--gap-40px {
+            gap: 40px;
+        }
+
+        &__footer {
+
+            padding: 68px 0 22px 0;
+
+            max-width: 704px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (min-width: 595px) {
+
+    .mentions-about-fork::after {
+        width: 555px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .mentions-about-fork {
+        &__title {
+            padding: 108px 0 88px 0;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 95px;
+            row-gap: 116px;
+        }
+
+        &__footer {
+
+            padding: 118px 0 22px 0;
+
+            max-width: 887px;
+        }
+
+        &::after {
+        width: 780px;
+        }
+    }
+}
